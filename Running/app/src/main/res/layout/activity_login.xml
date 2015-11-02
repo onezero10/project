@@ -1,50 +1,42 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"  tools:context="com.ce.nutchakhun.running.Login" >
-
-    <ImageView
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background = "@drawable/bgmin"
+    tools:context="com.ce.nutchakhun.running.Login"
+     >
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:background="@drawable/bg"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/Submit_Button"
-        android:layout_alignEnd="@+id/Submit_Button" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        android:id="@+id/Submit_Button"
+        android:id="@+id/submitbutton"
         android:background="@drawable/submit"
-        android:layout_alignTop="@+id/Signup_Button"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="sign up"
-        android:id="@+id/Signup_Button"
-        android:onClick="sendMessage"
+        android:id="@+id/signupbutton"
+        android:onClick="sendmessage"
         android:background="@drawable/signup"
-        android:layout_above="@+id/Forgot_Button"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/Submit_Button"
-        android:layout_toStartOf="@+id/Submit_Button" />
+        android:layout_above="@+id/forgotbutton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Forgot Password"
-        android:id="@+id/Forgot_Button"
+        android:text="forgot password"
+        android:id="@+id/forgotbutton"
         android:background="@drawable/button1"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/submitbutton"
+
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="139dp"
-        android:layout_alignRight="@+id/Submit_Button"
-        android:layout_alignEnd="@+id/Submit_Button" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -62,19 +54,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText17"
-        android:layout_alignTop="@+id/editText"
+        android:layout_above="@+id/textView3"
+        android:layout_toRightOf="@+id/textView2"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/Signup_Button"
-        android:layout_toEndOf="@+id/Signup_Button" />
+         />
+
+    <!--android:layout_toEndOf="@+id/SignupButton"-->
+        <!--android:layout_alignLeft="@+id/SubmitButton"-->
+        <!--android:layout_alignStart="@+id/SubmitButton" />-->
 
     <TextView
         android:layout_width="wrap_content"

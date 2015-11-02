@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class Login extends AppCompatActivity {
 
@@ -15,27 +16,28 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        final Button button = (Button) findViewById(R.id.Signup_Button);
+        final ImageButton button = (ImageButton) findViewById(R.id.signupbutton);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(Login.this, Register.class);
                 startActivity(intent);
             }
         });
-        final Button button2 = (Button) findViewById(R.id.Submit_Button);
+        final ImageButton button2 = (ImageButton) findViewById(R.id.submitbutton);
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(Login.this, Main.class);
                 startActivity(intent);
             }
         });
-        final Button button3 = (Button) findViewById(R.id.Forgot_Button);
+       final ImageButton button3 = (ImageButton) findViewById(R.id.forgotbutton);
         button3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(Login.this, Forget_pass.class);
                 startActivity(intent);
             }
         });
+
 
 
     }

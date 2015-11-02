@@ -7,29 +7,32 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class Register extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        final Button button = (Button) findViewById(R.id.R_sumbit);
-        button.setOnClickListener(new View.OnClickListener() {
+
+        final ImageButton button0 = (ImageButton) findViewById(R.id.button7);
+        button0.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(Register.this, Main.class);
                 startActivity(intent);
             }
         });
 
-        final Button button1 = (Button) findViewById(R.id.Reset_button);
+        final ImageButton button1 = (ImageButton) findViewById(R.id.button8);
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(Register.this, Register.class);
                 startActivity(intent);
             }
         });
-        final Button button2 = (Button) findViewById(R.id.button7);
+        final ImageButton button2 = (ImageButton) findViewById(R.id.button9);
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(Register.this, Login.class);
