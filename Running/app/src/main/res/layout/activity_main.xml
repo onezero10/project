@@ -1,18 +1,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"  tools:context=".Main">
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:background="@drawable/bg"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true" />
-
-
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3399ff"
+    tools:context=".Main">
 
 
 
@@ -23,7 +14,7 @@
         android:layout_alignParentTop="true">
 
         <Button
-            android:layout_width="100dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Home"
             android:id="@+id/button"
@@ -35,14 +26,14 @@
             android:background="@drawable/button1"/>
 
         <Button
-            android:layout_width="100dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="food"
             android:id="@+id/button10"
             android:background="@drawable/button1"/>
 
         <Button
-            android:layout_width="100dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Goal"
             android:id="@+id/button2"
@@ -54,7 +45,7 @@
             android:background="@drawable/button1"/>
 
         <Button
-            android:layout_width="100dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="workout"
             android:id="@+id/button3"
@@ -66,7 +57,7 @@
             android:background="@drawable/button1"/>
 
         <Button
-            android:layout_width="100dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nutrition"
             android:id="@+id/button4"
@@ -76,7 +67,7 @@
             android:background="@drawable/button1"/>
 
         <Button
-            android:layout_width="100dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="gym"
             android:id="@+id/button5"
@@ -88,7 +79,7 @@
             android:background="@drawable/button1"/>
 
         <Button
-            android:layout_width="100dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Log out"
             android:id="@+id/button6"
