@@ -15,4 +15,24 @@
     <string name="password_title">Password</string>
     <string name="login_error_message">Username or Password is incorrect.</string>
     <string name="E_mail">E-mail</string>
+
+    <string-array name="array_actlevel">
+        <item>Level1</item>
+        <item>Level2</item>
+        <item>Level3</item>
+        <item>Level4</item>
+
+    </string-array>
+
+    <string-array name="array_goal">
+        <item>Level1</item>
+        <item>Level2</item>
+        <item>Level3</item>
+        <item>Level4</item>
+
+    </string-array>
+
+
+
 </resources>
+
