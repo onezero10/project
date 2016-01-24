@@ -66,6 +66,29 @@ public class Goal extends AppCompatActivity {
     return true;
     }
 
+    public int calculateCalories(int age,int weight,int height,int sex,
+                                 double level,int goal) {
+        int bmr, tdee, calPerDay;
+        if (sex == 0) {
+            bmr = (int) ((10 * weight) + (6.25 * height) - (5 * age) + 5);
+            Log.d("bmr",bmr+"");
+            tdee = (int)(level * bmr);
+            Log.d("tdee",tdee+"");
+            calPerDay = (goal/7) + tdee;
+            return calPerDay;
+        } else {
+            bmr = (int) ((10 * weight) + (6.25 * height) - (5 * age) - 161);
+            tdee = (int)(level * bmr);
+            calPerDay = (goal/7) + tdee;
+            return calPerDay;
+
+        }
+
+
+    }
+
+
+
     public void sumbit_data(View view) {
         if(checkdata()==true){
             EditText edit = (EditText) findViewById(R.id.fill_age);
@@ -78,16 +101,45 @@ public class Goal extends AppCompatActivity {
             int sex = radioGroup.getCheckedRadioButtonId();
             if(sex==R.id.male) sex = 0;
             else sex = 1;
+
             Spinner spinner = (Spinner) findViewById(R.id.spinner_level);
             int level = spinner.getSelectedItemPosition();
+            double level2;
+            if(level==0)level2=1.2;
+            else if(level == 1 )level2 = 1.375;
+            else if(level == 2) level2 = 1.55;
+            else {
+                level2 = 1.7;
+            }
+
             Spinner spinner2 = (Spinner) findViewById(R.id.spinner_goal);
             int goal = spinner2.getSelectedItemPosition();
+            if(goal==0) goal = -1*7700;
+            else if(goal==1) goal = (int)-0.5*7700;
+            else if (goal==2) goal = 0;
+            else if (goal ==3) goal = (int)0.25*7700;
+            else {
+                goal = (int)0.5*7700;
+            }
+
             Log.d("age",age+"");
             Log.d("weight",weight+"");
             Log.d("Height",height+"");
             Log.d("sex",sex+"");
-            Log.d("level",level+"");
+            Log.d("level2",level2+"");
             Log.d("goal",goal+"");
+
+
+           int cal;
+
+            {
+              cal = calculateCalories(age, weight,height, sex, level2, goal);
+             Log.d("cal",cal+"");
+            }
+
+        }
+
+
 
 
 
@@ -96,7 +148,14 @@ public class Goal extends AppCompatActivity {
         }
 
 
-    }
+
+
+
+
+
+
 
 
 }
+
+

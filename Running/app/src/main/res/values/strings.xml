@@ -17,18 +17,20 @@
     <string name="E_mail">E-mail</string>
 
     <string-array name="array_actlevel">
-        <item>Level1</item>
-        <item>Level2</item>
-        <item>Level3</item>
-        <item>Level4</item>
+        <item>Sedentary</item>
+        <item>Light Active</item>
+        <item>Active</item>
+        <item>Very Active</item>
+
 
     </string-array>
 
     <string-array name="array_goal">
-        <item>Level1</item>
-        <item>Level2</item>
-        <item>Level3</item>
-        <item>Level4</item>
+        <item>Lose 1 Kg per week</item>
+        <item>Lose 0.5 Kg per week</item>
+        <item>Maintain my current weight</item>
+        <item>Gain 0.25 Kg per week</item>
+        <item>Gain 0.5 Kg per week</item>
 
     </string-array>
 
