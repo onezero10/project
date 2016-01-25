@@ -1,10 +1,17 @@
 package com.ce.nutchakhun.running;
+import android.content.ContentValues;
+import android.content.Context;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
+
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.ArrayList;
+
 public class MapsActivity extends FragmentActivity {
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
     @Override
@@ -12,6 +19,10 @@ public class MapsActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         setUpMapIfNeeded();
+        //Google gp = new GooglePlace(api_key);
+
+
+
     }
     @Override
     protected void onResume() {
@@ -33,7 +44,18 @@ public class MapsActivity extends FragmentActivity {
 
 
     private void setUpMap() {
-        mMap.addMarker(new MarkerOptions().position(new LatLng(13.730088, 100.775656)).title("Marker"));
+        /*GooglePlaceSearch search = new GooglePlaceSearch("AIzaSyBOID0QdDxYbKj9Jz_VtlGikOVDORg9BuE");
+        ArrayList<ContentValues>result = search.getTextSearch("Gym");
+        for(ContentValues cv:result) {
+            //mMap.addMarker(new MarkerOptions().position(new LatLng(13.730088, 100.775656)).title("Marker"));
+
+            //mMap.addMarker(new MarkerOptions().position(new LatLng(cv.getAs, 100.775656)).title("Marker"));
+
+            Log.d("Map found",cv.getAsString(GooglePlaceSearch.NAME)+":"+cv.getAsString(GooglePlaceSearch.LATITUDE)+cv.getAsString(GooglePlaceSearch.LONGITUDE));
+
+
+        }*/
+
     }
 }
 /**

@@ -63,7 +63,20 @@ public class Main extends AppCompatActivity {
             }
         });
 
+        boolean thisFirstTime=false;
+        if(UserData.getAge(this)==null)thisFirstTime=true;
+        else if(UserData.getActLevel(this)==null)thisFirstTime=true;
+        else if(UserData.getCalPerDay(this)==null)thisFirstTime=true;
+        else if(UserData.getHeight(this)==null)thisFirstTime=true;
+        else if(UserData.getSex(this)==null)thisFirstTime=true;
+        else if(UserData.getWeight(this)==null)thisFirstTime=true;
 
+        if(thisFirstTime==true){
+            Intent goGoal = new Intent(getApplicationContext(),Goal.class);
+            startActivity(goGoal);
+
+
+        }
 
 
     }

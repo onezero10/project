@@ -36,6 +36,21 @@ public class Goal extends AppCompatActivity {
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
         goal.setAdapter(adapter2);
+
+
+        EditText edit = (EditText) findViewById(R.id.fill_age);
+        edit.setText(UserData.getAge(this)+"");
+        edit = (EditText) findViewById(R.id.fill_weight);
+        edit.setText(UserData.getWeight(this)+"");
+        edit = (EditText) findViewById(R.id.fill_height);
+        edit.setText(UserData.getHeight(this)+"");
+        Integer sex = UserData.getSex(this);
+        if(sex!=null) {
+            if (sex == 0) findViewById(R.id.male).setSelected(true);
+            else if (sex == 1) findViewById(R.id.female).setSelected(true);
+        }
+
+
     }
 
     @Override
@@ -115,11 +130,11 @@ public class Goal extends AppCompatActivity {
             Spinner spinner2 = (Spinner) findViewById(R.id.spinner_goal);
             int goal = spinner2.getSelectedItemPosition();
             if(goal==0) goal = -1*7700;
-            else if(goal==1) goal = (int)-0.5*7700;
+            else if(goal==1) goal = (int)(-0.5*7700);
             else if (goal==2) goal = 0;
-            else if (goal ==3) goal = (int)0.25*7700;
+            else if (goal ==3) goal = (int)(0.25*7700);
             else {
-                goal = (int)0.5*7700;
+                goal = (int)(0.5*7700);
             }
 
             Log.d("age",age+"");
@@ -130,12 +145,16 @@ public class Goal extends AppCompatActivity {
             Log.d("goal",goal+"");
 
 
-           int cal;
+           /*int cal;
 
             {
               cal = calculateCalories(age, weight,height, sex, level2, goal);
              Log.d("cal",cal+"");
-            }
+            }*/
+
+        UserData.updateUser(this,age,weight,height,sex,level2,goal);
+            finish();
+
 
         }
 

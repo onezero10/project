@@ -12,8 +12,11 @@ import java.util.logging.LogRecord;
 /**
  * Created by Nutchakhun on 10/13/15 AD.
  */
+
+
 public class splashScreen extends Activity{
     private android.os.Handler myhandler;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +29,13 @@ public class splashScreen extends Activity{
             @Override
             public void run() {
                 finish();
-                Intent goMain = new Intent(getApplicationContext(),Login.class);
-                startActivity(goMain);
+
+
+
+
+                    Intent goMain = new Intent(getApplicationContext(), Main.class);
+                    startActivity(goMain);
+
 
             }
 
