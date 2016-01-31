@@ -5,12 +5,11 @@
     android:background="#3399ff"
     tools:context=".Main">
 
-
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true">
 
         <Button
             android:layout_width="match_parent"
@@ -22,14 +21,14 @@
             android:layout_alignParentStart="true"
             android:layout_alignRight="@+id/button2"
             android:layout_alignEnd="@+id/button2"
-            android:background="@drawable/button1"/>
+            android:background="#ff3eaff9"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="food"
             android:id="@+id/button10"
-            android:background="@drawable/button1"/>
+            android:background="#ff3eaff9"/>
 
         <Button
             android:layout_width="match_parent"
@@ -41,7 +40,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignRight="@+id/R_sumbit"
             android:layout_alignEnd="@+id/R_sumbit"
-            android:background="@drawable/button1"/>
+            android:background="#ff3eaff9"/>
 
         <Button
             android:layout_width="match_parent"
@@ -53,7 +52,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignRight="@+id/Reset_button"
             android:layout_alignEnd="@+id/Reset_button"
-            android:background="@drawable/button1"/>
+            android:background="#ff3eaff9"/>
 
         <Button
             android:layout_width="match_parent"
@@ -63,7 +62,7 @@
             android:layout_below="@+id/R_sumbit"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:background="@drawable/button1"/>
+            android:background="#ff3eaff9"/>
 
         <Button
             android:layout_width="match_parent"
@@ -75,22 +74,17 @@
             android:layout_alignParentStart="true"
             android:layout_alignRight="@+id/Reset_button"
             android:layout_alignEnd="@+id/Reset_button"
-            android:background="@drawable/button1"/>
+            android:background="#ff3eaff9"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Log out"
             android:id="@+id/button6"
-            android:layout_below="@+id/button5"
+            android:background="#ff3eaff9"
+            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignRight="@+id/button5"
-            android:layout_alignEnd="@+id/button5"
-            android:background="@drawable/button1"/>
-
+            android:layout_alignParentStart="true" />
 
     </LinearLayout>
-
-
 </RelativeLayout>

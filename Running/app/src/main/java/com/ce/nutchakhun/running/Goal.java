@@ -58,7 +58,7 @@ public class Goal extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_goal, menu);
         return true;
-    }   
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -78,7 +78,7 @@ public class Goal extends AppCompatActivity {
     private boolean checkdata(){
 
 
-    return true;
+        return true;
     }
 
     public int calculateCalories(int age,int weight,int height,int sex,
@@ -152,7 +152,7 @@ public class Goal extends AppCompatActivity {
              Log.d("cal",cal+"");
             }*/
 
-        UserData.updateUser(this,age,weight,height,sex,level2,goal);
+            UserData.updateUser(this,age,weight,height,sex,level2,goal);
             finish();
 
 
@@ -164,7 +164,7 @@ public class Goal extends AppCompatActivity {
 
 
 
-        }
+    }
 
 
 

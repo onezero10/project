@@ -15,6 +15,15 @@
     <string name="password_title">Password</string>
     <string name="login_error_message">Username or Password is incorrect.</string>
     <string name="E_mail">E-mail</string>
+    <string name="title_home">Home</string>
+    <string name="name">Name</string>
+
+    <string name="re_password">Re-Password</string>
+    <string name="age">age</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+
+
 
     <string-array name="array_actlevel">
         <item>Sedentary</item>
@@ -36,5 +45,24 @@
 
 
 
-</resources>
 
+
+
+
+    <string-array name="foods">
+        <item>หมูกระเทียม</item>
+        <item>กะเพราปลาหมึก</item>
+        <item>กะเพราหมูสับไข่ดาว</item>
+        <item>ข้าวไข่เจียว</item>
+        <item>ผัดไท</item>
+    </string-array>
+
+    <integer-array name="cals">
+        <item>650</item>
+        <item>800</item>
+        <item>850</item>
+        <item>700</item>
+        <item>750</item>
+    </integer-array>
+
+</resources>

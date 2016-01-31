@@ -17,7 +17,7 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        final ImageButton button0 = (ImageButton) findViewById(R.id.button7);
+        final Button button0 = (Button) findViewById(R.id.button7);
         button0.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(Register.this, Main.class);
@@ -25,14 +25,14 @@ public class Register extends AppCompatActivity {
             }
         });
 
-        final ImageButton button1 = (ImageButton) findViewById(R.id.button8);
+        final Button button1 = (Button) findViewById(R.id.button8);
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(Register.this, Register.class);
                 startActivity(intent);
             }
         });
-        final ImageButton button2 = (ImageButton) findViewById(R.id.button9);
+        final Button button2 = (Button) findViewById(R.id.button_submit);
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(Register.this, Login.class);

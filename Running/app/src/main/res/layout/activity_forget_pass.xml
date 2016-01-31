@@ -17,12 +17,12 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/fieldshape"
-            android:padding="16dp"
-            android:id="@+id/password"
             android:inputType="textEmailAddress"
-            android:hint="@string/E_mail"/>
-
+            android:padding="16dp"
+            android:id="@+id/email"
+            android:hint="@string/E_mail"
+            android:background="@drawable/fieldshape"
+            />
 
 
     <Button

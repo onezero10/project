@@ -5,190 +5,130 @@
     android:background="#3399ff"
     >
 
-
-
-
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/editText9"
-        android:layout_marginTop="35dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/editText3"
-        android:layout_alignStart="@+id/editText3" />
+        android:layout_alignParentBottom="true">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:id="@+id/name"
+                android:hint="@string/name"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
 
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText10"
-        android:text="     Name:  "
-        android:background="@drawable/box"
-        android:layout_alignTop="@+id/editText9"
-        android:layout_toLeftOf="@+id/editText9"
-        android:layout_toStartOf="@+id/editText9" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:id="@+id/Email"
+                android:inputType="textEmailAddress"
+                android:hint="@string/E_mail"
+                android:layout_below="@+id/name"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:id="@+id/Password"
+                    android:inputType="textPassword"
+                    android:hint="@string/password_title"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
 
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText2"
-        android:layout_below="@+id/editText9"
-        android:layout_toLeftOf="@+id/editText9"
-        android:layout_toStartOf="@+id/editText9"
-        android:text="     E-mail: "
-        android:background="@drawable/box"/>
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/editText3"
-        android:layout_alignTop="@+id/editText2"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="47dp"
-        android:layout_marginEnd="47dp" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText4"
-        android:text="    Password: "
-        android:background="@drawable/box"
-        android:layout_below="@+id/editText3"
-        android:layout_toLeftOf="@+id/editText3"
-        android:layout_toStartOf="@+id/editText3" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/editText5"
-        android:layout_below="@+id/editText3"
-        android:layout_toRightOf="@+id/editText2"
-        android:layout_toEndOf="@+id/editText2"
-        />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText6"
-        android:text="  re-Password: "
-        android:background="@drawable/box"
-        android:layout_below="@+id/editText5"
-        android:layout_toLeftOf="@+id/editText5"
-        android:layout_toStartOf="@+id/editText5" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/editText7"
-        android:layout_below="@+id/editText5"
-        android:layout_alignLeft="@+id/editText5"
-        android:layout_alignStart="@+id/editText5" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText11"
-        android:text="     Age: "
-        android:background="@drawable/box"
-        android:layout_below="@+id/editText7"
-        android:layout_alignRight="@+id/editText10"
-        android:layout_alignEnd="@+id/editText10" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText12"
-        android:text="     Height:  "
-        android:background="@drawable/box"
-        android:layout_below="@+id/editText14"
-        android:layout_alignRight="@+id/editText11"
-        android:layout_alignEnd="@+id/editText11" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText13"
-        android:text="     Weight: "
-        android:background="@drawable/box"
-        android:layout_below="@+id/editText15"
-        android:layout_alignLeft="@+id/editText12"
-        android:layout_alignStart="@+id/editText12"
-        android:layout_toLeftOf="@+id/editText16"
-        android:layout_toStartOf="@+id/editText16" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:id="@+id/rePassword"
+                    android:inputType="textPassword"
+                    android:hint="@string/re_password"
+                    android:layout_below="@+id/Password"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:id="@+id/age"
+                    android:hint="@string/age"
+                    android:layout_below="@+id/rePassword"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:id="@+id/Height"
+                    android:hint="@string/height"
+                    android:layout_below="@+id/age"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:id="@+id/Weight"
+                    android:hint="@string/weight"
+                    android:layout_below="@+id/weight"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
 
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editText14"
-        android:layout_alignTop="@+id/editText11"
-        android:layout_toRightOf="@+id/editText6"
-        android:layout_toEndOf="@+id/editText6" />
 
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editText15"
-        android:layout_below="@+id/editText14"
-        android:layout_alignLeft="@+id/editText14"
-        android:layout_alignStart="@+id/editText14"
-        android:layout_alignRight="@+id/editText14"
-        android:layout_alignEnd="@+id/editText14" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_submit"
+            android:background="#ff3eaff9"
+            android:textColor="#111111"
+            android:text="Submit"
+            android:textSize="16sp"
+            />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editText16"
-        android:layout_below="@+id/editText15"
-        android:layout_alignLeft="@+id/editText15"
-        android:layout_alignStart="@+id/editText15" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true">
+                        <Button
+                            android:layout_width="184dp"
+                            android:layout_height="wrap_content"
+                            android:text="  Reset"
+                            android:id="@+id/button8"
+                            android:background="#ff3eaff9"
+                            android:textColor="#111111"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        android:id="@+id/button7"
-        android:background="@drawable/submit"
-        android:layout_above="@+id/button8"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+                        <Button
+                            android:layout_width="177dp"
+                            android:layout_height="wrap_content"
+                            android:text="  Login"
+                            android:id="@+id/button7"
+                            android:background="#ff3eaff9"
+                            android:textColor="#111111"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentLeft="true"
+                            />
+                    </LinearLayout>
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="  Reset"
-        android:id="@+id/button8"
-        android:background="@drawable/reset"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="  Login"
-        android:id="@+id/button9"
-        android:background="@drawable/login"
-        android:layout_alignTop="@+id/button8"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
+    </LinearLayout>
 
 </RelativeLayout>

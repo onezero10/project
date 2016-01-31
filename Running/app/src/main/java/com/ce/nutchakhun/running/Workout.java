@@ -21,7 +21,7 @@ public class Workout extends AppCompatActivity {
         String [ ] group = { "Cardio", "Weight Trainning", "Running" };
         String [ ] [ ] children =
                 {
-                        { "Swimming", "Riding", "Badminton" }
+                        { "Swimming", "Rid       ing", "Badminton" }
                         , { "Arm", "Abs", "Leg" }
                         , { "Running" }
                 };

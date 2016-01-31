@@ -24,9 +24,4 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.google.android.gms:play-services:8.1.0'
     compile 'com.google.android.gms:play-services-location:7.5.0'
-    compile files('/Users/Nutchakhun/AndroidStudioProjects/Running/libs/httpclient-4.5.1.jar')
-    compile files('/Users/Nutchakhun/AndroidStudioProjects/Running/libs/httpcore-4.4.3.jar')
-    compile files('/Users/Nutchakhun/AndroidStudioProjects/Running/libs/httpclient-cache-4.5.1.jar')
-    compile files('/Users/Nutchakhun/AndroidStudioProjects/Running/libs/httpclient-win-4.5.1.jar')
-    compile files('/Users/Nutchakhun/AndroidStudioProjects/Running/libs/android-support-v4.jar')
 }

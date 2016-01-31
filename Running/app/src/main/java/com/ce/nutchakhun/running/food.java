@@ -1,41 +1,106 @@
 package com.ce.nutchakhun.running;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.app.Dialog;
+import android.database.Cursor;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.TabHost;
-//import com.ce.nutchakhun.running.R;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class food extends AppCompatActivity {
+    private List<String> food = new ArrayList<>();
+    private List<Integer> cal = new ArrayList<>();
+    //function update
+    private void updateList(){
+        customAdapter adapter=new customAdapter(getApplicationContext(),food,cal);
+        ListView listView =(ListView)findViewById(R.id.list);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new OnItemClickListener() {
+            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 
+            }
+
+        });
+
+
+    }
+
+    private database workDB;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle saveInstanceState) {
+        super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_food);
+        //database that work
+        workDB = new database(this);
+        //cursor that point to database
+        Cursor cur=workDB.getAllFood();
 
-    }
+        cur.moveToFirst();
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_food, menu);
-        return true;
-    }
+        while(!cur.isAfterLast()){
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+            food.add(cur.getString(0));
+            cal.add(cur.getInt(1));
+            cur.moveToNext();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+
+
         }
 
-        return super.onOptionsItemSelected(item);
-    }
+
+        updateList();
+
+
+
+
+            //dialog add button
+            Button btnDialog = (Button) findViewById(R.id.addBtn);
+            EditText foodname= (EditText)findViewById(R.id.foodName);
+            EditText calr = (EditText)findViewById(R.id.calories);
+            //button click dialog
+            btnDialog.setOnClickListener(new OnClickListener() {
+                public void onClick (View v){
+                    final Dialog dialog = new Dialog(food.this);
+                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                    dialog.setContentView(R.layout.custom_dialog);
+                    dialog.setCancelable(true);
+                    //button submit
+                    Button button1 = (Button) dialog.findViewById(R.id.dialogSubmitButton);
+                    button1.setOnClickListener(new OnClickListener() {
+
+                        public void onClick(View v) {
+                            EditText newFood=(EditText) dialog.findViewById(R.id.foodName);
+                            String foodname=newFood.getText().toString();
+                            food.add(foodname);
+                            EditText newCal=(EditText) dialog.findViewById(R.id.calories);
+                            int calor = Integer.parseInt(newCal.getText().toString());
+                            cal.add(calor);
+
+                            workDB.saveFood(foodname,calor);
+
+                            updateList();
+                            dialog.dismiss();
+
+                        }
+                    });
+
+
+                    dialog.show();
+                }
+            }
+
+
+            );
+
+        }
+
 }
