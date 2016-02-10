@@ -15,6 +15,9 @@ public class database{
         Helper hp = new Helper(context);
         db=hp.getWritableDatabase();
     }
+
+
+
     //save food into table
     public void saveFood(String food,int cal){
         db.execSQL("INSERT INTO food (food,cal) VALUES('" + food + "'," + cal + ");");
@@ -49,6 +52,14 @@ public class database{
                     + "("
                     + "exercise TEXT,  "
                     + "cal INTEGER);");
+            //create daily table
+            db.execSQL("CREATE TABLE daily"
+                    + "("
+                    + "date TEXT,"
+                    + "goal INTEGER,"
+                    + "food INTEGER,"
+                    + "workout INTEGER,"
+                    + "remain INTEGER);");
 
             String[] nameFood=c.getResources().getStringArray(R.array.foods);
             int[] numcal=c.getResources().getIntArray(R.array.cals);

@@ -7,9 +7,23 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class Main extends AppCompatActivity {
+private int foodRequest = 69;
+private int sumCal=0;
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode== foodRequest && resultCode ==RESULT_OK){
+            TextView edit = (TextView) findViewById(R.id.showFood);
+            int calFood = data.getIntExtra("cal", 0);
+            sumCal+=calFood;
+            edit.setText(sumCal+"");
+        }
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +73,7 @@ public class Main extends AppCompatActivity {
         button10.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(Main.this, food.class);
-                startActivity(intent);
+                startActivityForResult(intent,foodRequest);
             }
         });
 
@@ -77,6 +91,26 @@ public class Main extends AppCompatActivity {
 
 
         }
+        TextView edit = (TextView) findViewById(R.id.showRemain);
+        edit.setText(UserData.getCalPerDay(this)+"");
+
+
+
+
+    }
+
+
+
+
+    @Override
+    public void onResume() {
+        super.onResume();  // Always call the superclass method first
+        TextView edit = (TextView) findViewById(R.id.showGoal);
+        edit.setText(UserData.getCalPerDay(this)+"");
+        edit = (TextView) findViewById(R.id.showRemain);
+        int remain = UserData.getCalPerDay(this)-sumCal;
+        edit.setText(remain+"");
+
 
 
     }
@@ -104,4 +138,7 @@ public class Main extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
+

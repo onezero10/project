@@ -1,9 +1,11 @@
 package com.ce.nutchakhun.running;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -12,6 +14,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,14 +24,46 @@ public class food extends AppCompatActivity {
     private List<Integer> cal = new ArrayList<>();
     //function update
     private void updateList(){
-        customAdapter adapter=new customAdapter(getApplicationContext(),food,cal);
+        final customAdapter adapter=new customAdapter(getApplicationContext(),food,cal);
         ListView listView =(ListView)findViewById(R.id.list);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new OnItemClickListener() {
-            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                final int pos= position;
+                final Dialog dialog = new Dialog(food.this);
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setContentView(R.layout.food_dialog);
+                dialog.setCancelable(true);
+                TextView foodname = (TextView ) dialog.findViewById(R.id.showFoodName);
+                foodname.setText("You choose" + food.get(position) + "?");
+                Button yes = (Button)dialog.findViewById(R.id.yesButton);
+                yes.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        Log.e("cal", adapter.getItem(pos) + "");
+                        Intent intent = new Intent();
+                        intent.putExtra("cal", (int) cal.get(pos));
+                        setResult(RESULT_OK, intent);
+                        finish();
+                    }
+                });
+
+                dialog.show();
+
+                Button no =(Button) dialog.findViewById(R.id.noButton);
+                no.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+
+
+
 
             }
-
         });
 
 

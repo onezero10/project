@@ -51,6 +51,7 @@ public class Goal extends AppCompatActivity {
         }
 
 
+
     }
 
     @Override
@@ -145,14 +146,14 @@ public class Goal extends AppCompatActivity {
             Log.d("goal",goal+"");
 
 
-           /*int cal;
+           int cal;
 
             {
               cal = calculateCalories(age, weight,height, sex, level2, goal);
              Log.d("cal",cal+"");
-            }*/
+            }
 
-            UserData.updateUser(this,age,weight,height,sex,level2,goal);
+            UserData.updateUser(this,age,weight,height,sex,level2,cal);
             finish();
 
 
