@@ -24,4 +24,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.google.android.gms:play-services:8.1.0'
     compile 'com.google.android.gms:play-services-location:7.5.0'
+    compile files('/Users/Nutchakhun/AndroidStudioProjects/Running/httpcore-4.1.1.jar')
+    compile files('/Users/Nutchakhun/AndroidStudioProjects/Running/httpclient-4.2.3.jar')
+    compile files('/Users/Nutchakhun/AndroidStudioProjects/Running/json-simple-1.1-bundle.jar')
 }

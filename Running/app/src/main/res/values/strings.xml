@@ -64,5 +64,6 @@
         <item>700</item>
         <item>750</item>
     </integer-array>
+    <string name="title_activity_calendar">calendar</string>
 
 </resources>

@@ -1,18 +1,28 @@
 package com.ce.nutchakhun.running;
 
 import android.content.Context;
+import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.google.android.gms.location.places.Place;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class MapsActivity extends FragmentActivity {
     GoogleMap mMap;
@@ -26,6 +36,19 @@ public class MapsActivity extends FragmentActivity {
 
         mMap = ((SupportMapFragment)getSupportFragmentManager()
                 .findFragmentById(R.id.map)).getMap();
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
     LocationListener listener = new LocationListener() {
@@ -84,3 +107,5 @@ public class MapsActivity extends FragmentActivity {
         lm.removeUpdates(listener);
     }
 }
+
+   

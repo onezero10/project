@@ -1,19 +1,31 @@
 package com.ce.nutchakhun.running;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class Main extends AppCompatActivity {
 private int foodRequest = 69;
 private int sumCal=0;
+private int dateRequest =1;
+
+    private Context context;
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(requestCode== foodRequest && resultCode ==RESULT_OK){
@@ -22,11 +34,19 @@ private int sumCal=0;
             sumCal+=calFood;
             edit.setText(sumCal+"");
         }
+        else if(requestCode == dateRequest && resultCode== RESULT_OK)
+        {
+            Button edit = (Button) findViewById(R.id.button11);
+            edit.setText(data.getStringExtra("date"));
+        }
 
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        context = this;
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final Button button = (Button) findViewById(R.id.button);
@@ -56,7 +76,7 @@ private int sumCal=0;
         final Button button4 = (Button) findViewById(R.id.button4);
         button4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(Main.this,Main.class);
+                Intent intent = new Intent(Main.this, Main.class);
                 startActivity(intent);
             }
         });
@@ -73,9 +93,23 @@ private int sumCal=0;
         button10.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(Main.this, food.class);
-                startActivityForResult(intent,foodRequest);
+                startActivityForResult(intent, foodRequest);
             }
         });
+        final Button button11 = (Button) findViewById(R.id.button11);
+        Date dt = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy ");
+        button11.setText(sdf.format(dt));
+
+        button11.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(Main.this, calendar.class);
+                startActivityForResult(intent, dateRequest);
+            }
+        });
+
+
+
 
         boolean thisFirstTime=false;
         if(UserData.getAge(this)==null)thisFirstTime=true;
@@ -108,8 +142,12 @@ private int sumCal=0;
         TextView edit = (TextView) findViewById(R.id.showGoal);
         edit.setText(UserData.getCalPerDay(this)+"");
         edit = (TextView) findViewById(R.id.showRemain);
+
+        if(UserData.getCalPerDay(this)!=null)
+        {
         int remain = UserData.getCalPerDay(this)-sumCal;
-        edit.setText(remain+"");
+            edit.setText(remain+"");
+        }
 
 
 
